@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<head>
+  <title>H6 Bootstrap Site</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script>
+    var data = {"Trivia":[
+      {//question 1
+        "question":"What's Ponyo's favorite food?",
+        "option1":
+          {
+            "text":"Corn",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Ham",
+            "value":10
+          },
+        "option3":
+        {
+          "text":"Ramen",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Eggs",
+          "value":0
+        }
+      },
+
+      {//question 2
+        "question":"Which movie is Studio Ghilbi's first hit?",
+        "option1":
+          {
+            "text":"My Neighbor Totoro",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Howl's Moving Castle",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Kiki's Deliver Service",
+          "value":10
+        },
+        "option4":
+        {
+          "text":"Spirited Away",
+          "value":0
+        }
+      },
+
+      {//question 3
+        "question":"What is the name of the little boy that saves and befriends Ponyo?",
+        "option1":
+          {
+            "text":"Hisako",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Moro",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Ashitaka",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Sosuke",
+          "value":10
+        }
+      },
+
+      {//question 4
+        "question":"What name did Yubabba give to Chihiro?",
+        "option1":
+          {
+            "text":"Sen",
+            "value":10
+          },
+        "option2":
+          {
+            "text":"Bon",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Lin",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Haku",
+          "value":0
+        }
+      },
+      {//question 5
+        "question":"What is the name of the female lead role in Howl's Moving Castle?",
+        "option1":
+          {
+            "text":"Kamaji",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"San",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Sophie",
+          "value":10
+        },
+        "option4":
+        {
+          "text":"Lana",
+          "value":0
+        }
+      },
+      {//question 6
+        "question":"What's the name of Kiki's black cat?",
+        "option1":
+          {
+            "text":"Felix",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Jiji",
+            "value":10
+          },
+        "option3":
+        {
+          "text":"Luna",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Salem",
+          "value":0
+        }
+      },
+      {//question 7
+        "question":"What does No-Face give to people in the bath house?",
+        "option1":
+          {
+            "text":"Money",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"A feast",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Gold",
+          "value":10
+        },
+        "option4":
+        {
+          "text":"Electricity",
+          "value":0
+        }
+      },
+      {//question 8
+        "question":"What is Ponyo's birthname?",
+        "option1":
+          {
+            "text":"Lisa",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Tomura",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Nozomi",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Brunhilde",
+          "value":10
+        }
+      },
+      {//question 9
+        "question":"What is the name of the fire demon that powers and moves Howl's castle?",
+        "option1":
+          {
+            "text":"Calcifer",
+            "value":10
+          },
+        "option2":
+          {
+            "text":"Coal",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Alumo",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Pyro",
+          "value":0
+        }
+      },
+      {//question 10
+        "question":"What kind of spirit is Haku?",
+        "option1":
+          {
+            "text":"Kohaku Land Spirit",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Kohaku Tree Spirit",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Kohaku River Spirit",
+          "value":10
+        },
+        "option4":
+        {
+          "text":"Kohaku Wind Spirit",
+          "value":0
+        }
+      }
+]}
+
+var question = 0;
+var points = 0;
+  function triviaOn(choice)
+  {
+    points = points + parseInt(choice);
+
+    if (question < 4){
+    document.getElementById("empty").innerHTML = "<form><p>" + data.Trivia[question].question
+    + "</p><p>" + "<input type=\"radio\" value = " +
+    data.Trivia[question].option1.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option1.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option2.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option2.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option3.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option3.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option4.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option4.text + "</form><p>You have " + points + " points";
+  }
+  else
+  {
+    document.getElementById('empty').innerHTML = "<p>Congrats! You got " + points + " points out of 40";
+  }
+  question++;
+  }
+
+  </script>
+</head>
+
+<body>
+  <div class="boxx">
+  <h2>Studio Ghilbi Trivia</h2>
+
+<div class="box">
+<div id="empty">
+  <form>
+      <p>Start here</p>
+      <p>
+          <input type="radio" value="0" onchange="triviaOn(this.value)">Start
+      </p>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>

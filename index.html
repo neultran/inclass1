@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+  <title>JavaScript Logic and JSON</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <script>
+    var data = {"Trivia":[
+      {//question 1
+        "question":"Which blood type is a universal donor?",
+        "option1":
+          {
+            "text":"B+",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"O-",
+            "value":10
+          },
+        "option3":
+        {
+          "text":"O+",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"AB-",
+          "value":0
+        }
+      },
+
+      {//question 2
+        "question":"What American folk hero was a real-life Tennessee Congressman?",
+        "option1":
+          {
+            "text":"Theo Von",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Tim Burchett",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Davy Crockett",
+          "value":10
+        },
+        "option4":
+        {
+          "text":"John Blair",
+          "value":0
+        }
+      },
+
+      {//question 3
+        "question":"What is the fourth book in the Harry Potter series?",
+        "option1":
+          {
+            "text":"Deathly Hallows",
+            "value":0
+          },
+        "option2":
+          {
+            "text":"Prisoner of Azkaban",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Chamber of Secrets",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"The Goblet of Fire",
+          "value":10
+        }
+      },
+
+      {//question 4
+        "question":"Who is the only singer to have 7 singles in a row be #1 on the Billboard Hot 100?",
+        "option1":
+          {
+            "text":"Whitney Houston",
+            "value":10
+          },
+        "option2":
+          {
+            "text":"Madonna",
+            "value":0
+          },
+        "option3":
+        {
+          "text":"Stevie Wonder",
+          "value":0
+        },
+        "option4":
+        {
+          "text":"Taylor Swift",
+          "value":0
+        }
+      }
+
+]}
+
+var question = 0;
+var points = 0;
+  function triviaOn(choice)
+  {
+    points = points + parseInt(choice);
+
+    if (question < 4){
+    document.getElementById("empty").innerHTML = "<form><p>" + data.Trivia[question].question
+    + "</p><p>" + "<input type=\"radio\" value = " +
+    data.Trivia[question].option1.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option1.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option2.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option2.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option3.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option3.text + "<br><input type=\"radio\" value = " +
+
+    data.Trivia[question].option4.value + " onchange=\"triviaOn(this.value)\">" +
+    data.Trivia[question].option4.text + "</form><p>You have " + points + " points";
+  }
+  else
+  {
+    document.getElementById('empty').innerHTML = "<p>Congrats! You got " + points + " points out of 40";
+  }
+  question++;
+  }
+
+  </script>
+</head>
+
+<body>
+  <div class="boxx">
+  <h2>Random Trivia</h2>
+
+<div class="box">
+<div id="empty">
+  <form>
+      <p>Start here</p>
+      <p>
+          <input type="radio" value="0" onchange="triviaOn(this.value)">Start
+      </p>
+  </form>
+</div>
+</div>
+</div>
+</body>
+</html>
